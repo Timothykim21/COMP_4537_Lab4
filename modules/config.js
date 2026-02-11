@@ -3,13 +3,13 @@ export const dbConfig = {
     admin: {
         host: 'localhost',
         user: 'lab_admin',
-        password: 'admin_password',
+        password: '#Comp4537_admin',
         database: 'lab_db'
     },
     readOnly: {
         host: 'localhost',
         user: 'lab_readonly',
-        password: 'read_password',
+        password: '#Comp4537_read',
         database: 'lab_db'
     }
 };
