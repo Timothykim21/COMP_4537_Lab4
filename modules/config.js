@@ -1,13 +1,13 @@
 // config.js
 exports.dbConfig = {
     admin: {
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'lab_admin',
         password: '#Comp4537_admin',
         database: 'lab_db'
     },
     readOnly: {
-        host: 'localhost',
+        host: '127.0.0.1',
         user: 'lab_readonly',
         password: '#Comp4537_read',
         database: 'lab_db'
