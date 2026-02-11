@@ -47,9 +47,10 @@ class DatabaseServer {
         }
 
         const parsedUrl = url.parse(req.url, true);
+        const path = parsedUrl.pathname;
 
         try {
-            if (req.method === 'POST' && parsedUrl.pathname === '/insert') {
+            if (req.method === 'POST' && path.includes('/insert')) {
                 const insertSql = `INSERT INTO patient (name, dateOfBirth) VALUES 
                     ('Sara Brown', '1901-01-01'),
                     ('John Smith', '1941-01-01'),
@@ -60,12 +61,14 @@ class DatabaseServer {
                 res.writeHead(200);
                 res.end(JSON.stringify({ message: "Data inserted successfully." }));
 
-            } else if (req.method === 'GET' && parsedUrl.pathname === '/query') {
+            } else if (req.method === 'GET' && path.includes('/query')) {
                 const userSql = parsedUrl.query.sql;
-                
                 const data = await this.db.executeQuery(userSql, false); 
                 res.writeHead(200);
                 res.end(JSON.stringify(data));
+            }else {
+                res.writeHead(404);
+                res.end(JSON.stringify({ error: "Endpoint not found" }));
             }
         } catch (error) {
             res.writeHead(403); 
