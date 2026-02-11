@@ -1,5 +1,5 @@
 // config.js
-export const dbConfig = {
+exports.dbConfig = {
     admin: {
         host: 'localhost',
         user: 'lab_admin',
@@ -14,7 +14,7 @@ export const dbConfig = {
     }
 };
 
-export const tableDefinition = `
+exports.tableDefinition = `
     CREATE TABLE IF NOT EXISTS patient (
         patientid INT(11) AUTO_INCREMENT PRIMARY KEY,
         name VARCHAR(100),

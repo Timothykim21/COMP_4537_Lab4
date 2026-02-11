@@ -1,7 +1,7 @@
-import http from 'http';
-import url from 'url';
-import mysql from 'mysql2/promise';
-import { dbConfig, tableDefinition } from './modules/config.js';
+const http = require('http');
+const url = require('url');
+const mysql = require('mysql2/promise');
+const { dbConfig, tableDefinition } = require('./modules/config.js');
 
 class DBManager {
 async executeQuery(sql, isAdmin = false) {
