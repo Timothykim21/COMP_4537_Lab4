@@ -1,0 +1,10 @@
+{
+  "name": "lab4-server",
+  "version": "1.0.0",
+  "description": "Node.js API Server for Lab 4",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}
